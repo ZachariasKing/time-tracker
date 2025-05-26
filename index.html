@@ -27,8 +27,9 @@
           >
             <path
               d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"
-            /></svg
-          > Time Tracker</a
+            />
+          </svg>
+          Time Tracker</a
         >
         <button
           class="navbar-toggler"
@@ -71,12 +72,13 @@
       <div class="container">
         <h1 class="fw-light">Time Tracker</h1>
         <p class="lead">Track your time efficiently and effectively.</p>
+        <p class="lead">Click on the timer below to start a 2 hour activity.</p>
       </div>
     </header>
 
     <!--------------------- Main Content -------------------------->
     <div
-      class="container d-flex justify-content-center align-items-center flex-column mt-5"
+      id="timer-circle" class="text-white container d-flex justify-content-center align-items-center flex-column mt-5"
     >
       <div class="row">
         <div class="col-12 text-center">
@@ -85,8 +87,9 @@
       </div>
       <div class="row">
         <div class="col-12 text-center">
-          <button id="start-button" class="btn btn-primary">Start</button>
-          <button id="pause-button" class="btn btn-secondary">Pause</button>
+            <button id="timer-clear" class="z-3 btn btn-danger">Clear Timer</button>
+          <!-- <button id="start-button" class="btn btn-primary">Start</button>
+          <button id="pause-button" class="btn btn-secondary">Pause</button> -->
         </div>
       </div>
     </div>
