@@ -1,3 +1,9 @@
+*{
+  font-family: "Rubik", sans-serif;
+}
+header{
+  background-color: #eef1da;
+}
 .btn-danger{
   --bs-btn-color: #fff;
   --bs-btn-bg: #8C5F66;
@@ -21,7 +27,7 @@
   width: 70vw;           /* keeps gaps on either side of circle 30vw relative to 70vw viewport width taken up by ciurcle  */
   aspect-ratio: 1 / 1; /* Ensures it remains a circle */
   border-radius: 50%;     /* Makes it a circle */
-  max-width: 400px;      /* Optional: limit max size */
+  max-width: 350px;      /* Optional: limit max size */
   min-width: 250px;   
   background: #ADB2D4;    /* Dark background, matches Bootstrap bg-dark */
   box-shadow: 0 0 5px rgba(0,0,0,0.4);
@@ -31,4 +37,7 @@
 }
 #timer-circle:active {
 box-shadow: 0 0 15px rgba(100, 103, 122,0.6) inset; /*inset shadow to give tactile response to user when circle clicked on*/
+}
+.navbar-dark{
+  background-color: #1b2021 !important; /* Dark background color */
 }
