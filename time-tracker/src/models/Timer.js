@@ -1,76 +1,46 @@
-let timer;
-
-// Function to start a countdown timer of 2 hours
-document.getElementById("timer-circle").onclick = function () {
-  //If the timer is already running, pause it; if it exists but is paused then resume, else start a new timer
-  if (timer) {
-    if (timer.isPaused) {
-      timer.resume();
-    } else {
-      timer.pause();
-    }
-  } else {
-    timer = startTimer(7200, "timer-p", function () {});
+// Timer class models a countdown timer with methods to start, pause, reset, and get the remaining time in hours, minutes, and seconds.
+export class Timer {
+  constructor(durationSeconds = 7200) {
+    this.duration = durationSeconds;
+    this.remaining = durationSeconds;
+    this.interval = null;
+    this.isRunning = false;
   }
-};
 
-//Function to clear the timer when the clear button is clicked
-document.getElementById("timer-clear").onclick = function () {
-  clearCurrentTimer();
-};
+  start(callback) {
+    if (this.isRunning) return;
+    this.isRunning = true;
 
-// Function to start a countdown timer
-function startTimer(seconds, container, oncomplete) {
-  var startTime,
-    timer,
-    obj,
-    ms = seconds * 1000,
-    display = document.getElementById(container);
-  obj = {};
-  obj.isPaused = false;
-  obj.resume = function () {
-    startTime = new Date().getTime();
-    timer = setInterval(obj.step, 250);
-  };
-  obj.pause = function () {
-    isPaused = true;
-    ms = obj.step();
-    clearInterval(timer);
-  };
-  obj.step = function () {
-    ms = isNaN(ms) || ms < 0 ? 0 : ms;
-    var now = Math.max(0, ms - (new Date().getTime() - startTime)),
-      h = Math.floor(now / 3600000),
-      m = Math.floor((now % 3600000) / 60000),
-      s = Math.floor((now % 60000) / 1000);
-    h = (h < 10 ? "0" : "") + h;
-    m = (m < 10 ? "0" : "") + m;
-    s = (s < 10 ? "0" : "") + s;
-    display.innerHTML = h + "h:" + m + "m:" + s + "s";
-    if (now == 0) {
-      clearInterval(timer);
-      obj.resume = function () {};
-      if (oncomplete) oncomplete();
-    }
-    return now;
-  };
-  obj.resume();
-  return obj;
-}
-
-
-// Function to add hours to a date object
-function addHours(date, hours) {
-  const hoursToAdd = hours * 60 * 60 * 1000;
-  date.setTime(date.getTime() + hoursToAdd);
-  return date;
-}
-
-// Function to clear the current timer
-function clearCurrentTimer() {
-  if (timer) {
-    timer = null;
-    document.getElementById("timer-p").innerHTML = "00h:00m:00s";
+    this.interval = setInterval(() => {
+      if (this.remaining > 0) {
+        this.remaining--;
+        callback(this.remaining);
+      } else {
+        this.pause();
+        callback(0); // timer completed
+      }
+    }, 1000);
   }
-};
 
+  pause() {
+    this.isRunning = false;
+    clearInterval(this.interval);
+  }
+
+  reset() {
+    this.pause();
+    this.remaining = this.duration;
+  }
+
+  clear() {
+    this.pause();
+    this.remaining = 0;
+  }
+
+  getTimeParts() {
+    const hrs = Math.floor(this.remaining / 3600);
+    const mins = Math.floor((this.remaining % 3600) / 60);
+    const secs = this.remaining % 60;
+    return { hrs, mins, secs };
+  }
+}
