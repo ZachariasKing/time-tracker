@@ -9,24 +9,15 @@
       rel="stylesheet"
       integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
       crossorigin="anonymous"
-    />
-
-    <!----------------Google Font - Rubik----------------->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-      rel="stylesheet"
-    />
-
-    <script type="module" crossorigin src="/time-tracker/assets/index-pu-NVd04.js"></script>
-    <link rel="stylesheet" crossorigin href="/time-tracker/assets/index-CvLohssR.css">
+    />
+    <script type="module" crossorigin src="/time-tracker/assets/index-P3oXbr25.js"></script>
+    <link rel="stylesheet" crossorigin href="/time-tracker/assets/index-BqwsO1bx.css">
   </head>
   <body>
     <!--------------------- Navbar -------------------------->
     <nav
       class="navbar navbar-expand-md navbar-dark bg-dark"
-      aria-label="Fourth navbar example"
+      aria-label="navbar dark"
     >
       <div class="container-fluid">
         <a class="navbar-brand" href="#"
@@ -93,32 +84,80 @@
       </div>
     </nav>
 
-    <!-- Header -->
-    <header class="text-center p-4">
-      <div class="container">
-        <h1 class="display-3 fw-bold">Time Tracker</h1>
-        <p class="lead m-0">Track your time efficiently and effectively.</p>
-        <p class="lead m-0">Click on the timer below to start a 2 hour activity.</p>
-      </div>
-    </header>
-
     <!--------------------- Main Content -------------------------->
-    <div
-      id="timer-circle"
-      class="text-white container d-flex justify-content-center align-items-center flex-column mt-5"
-    >
-      <div class="row">
-        <div class="col-12 text-center">
-          <p id="timer-p" class="display-5">00:00:00</p>
+
+    <div class="container mt-5">
+      <div class="row mb-5">
+        <div class="col-12">
+          
+          <div id="timer-circle" class="mx-auto">
+            <p id="timer-p" class="display-5">00:00:00</p>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12 text-center">
-          <button id="timer-clear" class="z-3 btn btn-danger">
-            Clear Timer
-          </button>
-          <!-- <button id="start-button" class="btn btn-primary">Start</button>
-          <button id="pause-button" class="btn btn-secondary">Pause</button> -->
+      <div class="row justify-content-center mb-5">
+        <div class="col-12 col-md-8">
+          <div class="row g-3">
+            <div class="col-4">
+              <button class="quick-timer-button btn btn-primary w-100">
+                25min
+              </button>
+            </div>
+            <div class="col-4">
+              <button class="quick-timer-button btn btn-primary w-100">
+                1hr
+              </button>
+            </div>
+            <div class="col-4">
+              <button class="quick-timer-button btn btn-primary w-100">
+                90min
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mb-5">
+        <div class="col-12 col-md-8">
+          <div class="row g-5">
+            <div class="col-6">
+              <button id="start-timer-button" class="btn btn-primary p-3  w-100">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-play-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"
+                  />
+                </svg>
+                Start
+              </button>
+            </div>
+            <div class="col-6">
+              <button
+                id="clear-timer-button"
+                class="btn btn-outline-secondary p-3 w-100"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-eraser-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828zm.66 11.34L3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293z"
+                  />
+                </svg>
+                Clear
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
