@@ -18,7 +18,7 @@
 
 ## Technologies
 
-- **Frontend**: HTML, CSS, JavaScript (or any front-end framework if you're using one)
+- **Frontend**: HTML, Bootstrap + custom CSS, Vanilla JavaScript (or any front-end framework if you're using one)
 - **Backend**: Firebase (for authentication and real-time database) or similar service
 - **Timer**: JavaScript for timer functionality
 
