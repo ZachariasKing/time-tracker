@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
-  font-family: "Rubik", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
+body{
+  background: linear-gradient(#4a6fa5, #91c8f1) fixed;
+}
+
 header{
   background-color: #eef1da;
 }
@@ -37,6 +43,19 @@ header{
 }
 #timer-circle:active {
 box-shadow: 0 0 15px rgba(100, 103, 122,0.6) inset; /*inset shadow to give tactile response to user when circle clicked on*/
+}
+.quick-timer-button {
+  border: 2px solid #4A6FA5;
+  background-color: RGBA(0, 0, 0, 0.0); /* transparent background */
+}
+#start-timer-button{
+  background-image: linear-gradient(to right, #73ff75, #009f7b); /* Gradient background */
+  background-size: 200% auto !important; /* Ensures the gradient covers the button */
+  border: 0px; /* Removes border */
+}
+#clear-timer-button{
+  border: 1px solid #e6f0fa;
+  color: #e6f0fa;
 }
 .navbar-dark{
   background-color: #1b2021 !important; /* Dark background color */
