@@ -34,3 +34,6 @@ We welcome contributions to improve Time Tracker! To contribute:
 6. Open a pull request with a description of the changes.
 
 Please ensure that your code is well-documented and adheres to any coding style guides we may have 😊.
+
+## Current Deployment
+Currently using npm to deploy to Github pages: https://zachariasking.github.io/time-tracker
