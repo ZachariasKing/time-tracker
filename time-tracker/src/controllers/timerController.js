@@ -1,23 +1,25 @@
 import { Timer } from '../models/Timer.js';
-import { updateTimerDisplay } from '../views/timerView.js';
+import { updateTimerDisplay, clearTimerDisplay } from '../views/timerView.js';
 
 // This function initializes a new Timer instance and starts it.
-let timer = new Timer(); // 2 hours = 7200s
+let timer; 
 
-export function startTimer() {
+export function startTimer(duration = 7200) {
+  timer = new Timer(duration); // 2 hours in seconds
   timer.start(updateTimerDisplay);
 }
 
 export function pauseTimer() {
-  timer.pause();
-}
-
-export function resetTimer() {
-  timer.reset();
-  updateTimerDisplay(timer.remaining);
+  timer?.pause();
 }
 
 export function clearTimer() {
-  timer.clear();
-  updateTimerDisplay(timer.remaining);
+  timer?.clear();
+  timer ? clearTimerDisplay() : console.warn("No timer to clear.");
+  timer = null; // Reset the timer instance
 }
+
+export function isRunning() {
+  return timer?.getIsRunning();
+}
+

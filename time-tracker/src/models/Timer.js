@@ -27,11 +27,6 @@ export class Timer {
     clearInterval(this.interval);
   }
 
-  reset() {
-    this.pause();
-    this.remaining = this.duration;
-  }
-
   clear() {
     this.pause();
     this.remaining = 0;
@@ -42,5 +37,9 @@ export class Timer {
     const mins = Math.floor((this.remaining % 3600) / 60);
     const secs = this.remaining % 60;
     return { hrs, mins, secs };
+  }
+
+  getIsRunning() {
+    return this.isRunning;
   }
 }
