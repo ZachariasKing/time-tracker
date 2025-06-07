@@ -10,8 +10,8 @@
       integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
       crossorigin="anonymous"
     />
-    <script type="module" crossorigin src="/time-tracker/assets/index-P3oXbr25.js"></script>
-    <link rel="stylesheet" crossorigin href="/time-tracker/assets/index-BqwsO1bx.css">
+    <script type="module" crossorigin src="/time-tracker/assets/index-D2aRILF7.js"></script>
+    <link rel="stylesheet" crossorigin href="/time-tracker/assets/index-CXvQpVQv.css">
   </head>
   <body>
     <!--------------------- Navbar -------------------------->
@@ -89,7 +89,6 @@
     <div class="container mt-5">
       <div class="row mb-5">
         <div class="col-12">
-          
           <div id="timer-circle" class="mx-auto">
             <p id="timer-p" class="display-5">00:00:00</p>
           </div>
@@ -97,19 +96,31 @@
       </div>
       <div class="row justify-content-center mb-5">
         <div class="col-12 col-md-8">
+          <label class="d-block" for="quick-timer-button"
+            >Set time using quick time buttons below:</label
+          >
           <div class="row g-3">
             <div class="col-4">
-              <button class="quick-timer-button btn btn-primary w-100">
+              <button
+                class="quick-timer-button btn btn-primary w-100"
+                data-duration="5"
+              >
                 25min
               </button>
             </div>
             <div class="col-4">
-              <button class="quick-timer-button btn btn-primary w-100">
+              <button
+                class="quick-timer-button btn btn-primary w-100"
+                data-duration="3600"
+              >
                 1hr
               </button>
             </div>
             <div class="col-4">
-              <button class="quick-timer-button btn btn-primary w-100">
+              <button
+                class="quick-timer-button btn btn-primary w-100"
+                data-duration="5400"
+              >
                 90min
               </button>
             </div>
@@ -117,11 +128,26 @@
         </div>
       </div>
 
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 form-group text-start mb-5">
+          <label class="d-block" for="time_input"
+            >or enter a specific countdown below:</label
+          >
+          <input
+            class="form-control p-3 text-center"
+            type="input"
+            name="time_input"
+            id="time_input"
+            placeholder="e.g. HH:mm:ss"
+          />
+        </div>
+      </div>
+
       <div class="row justify-content-center mb-5">
         <div class="col-12 col-md-8">
           <div class="row g-5">
             <div class="col-6">
-              <button id="start-timer-button" class="btn btn-primary p-3  w-100">
+              <button id="start-timer-button" class="btn btn-primary p-3 w-100">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -161,6 +187,17 @@
         </div>
       </div>
     </div>
+
+    <audio
+      id="timer-finished-sound"
+      src="/time-tracker/assets/mlaudio__success_bell-BlSmeSmG.wav"
+      preload="auto"
+    ></audio>
+    <audio
+      id="timer-cleared-sound"
+      src="/time-tracker/assets/yap_audio_production__weaponswipe03-C8bHhr7b.mp3"
+      preload="auto"
+    ></audio>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
