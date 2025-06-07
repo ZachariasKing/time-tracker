@@ -22,7 +22,6 @@ export function timerFinished() {
   audio.play().catch((error) => {
     console.error("Error playing audio:", error);
   });
-  /* Reset inner text of timer elements back to 0 and show timer finished in title */
   changeTimerAndTitleText("00:00:00", "Timer Finished");
 }
 

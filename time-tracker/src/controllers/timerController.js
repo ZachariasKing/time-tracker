@@ -4,7 +4,8 @@ import { updateTimerDisplay, clearTimerDisplay } from '../views/timerView.js';
 // This function initializes a new Timer instance and starts it.
 let timer; 
 
-export function startTimer(duration = 7200) {
+export function startTimer(duration) {
+
   timer = new Timer(duration); // 2 hours in seconds
   timer.start(updateTimerDisplay);
 }
