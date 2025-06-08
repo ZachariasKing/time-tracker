@@ -10,15 +10,12 @@
       integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
       crossorigin="anonymous"
     />
-    <script type="module" crossorigin src="/time-tracker/assets/index-DXhzvM0g.js"></script>
+    <script type="module" crossorigin src="/time-tracker/assets/index-DwdfyobC.js"></script>
     <link rel="stylesheet" crossorigin href="/time-tracker/assets/index-CZWDITkD.css">
   </head>
   <body>
     <!--------------------- Navbar -------------------------->
-    <nav
-      class="navbar navbar-expand-md navbar-dark"
-      aria-label="navbar dark"
-    >
+    <nav class="navbar navbar-expand-md navbar-dark" aria-label="navbar dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"
           ><svg
@@ -90,7 +87,10 @@
       <div class="row mb-5">
         <div class="col-12">
           <div id="timer-circle" class="mx-auto">
-            <p id="timer-p" class="display-5">00:00:00</p>
+            <div id="timer-spinner" class="d-none position-absolute spinner-border text-light" role="status">
+              <span class="visually-hidden text-dark">Loading...</span>
+            </div>
+            <p id="timer-p" class="display-5"></p>
           </div>
         </div>
       </div>
