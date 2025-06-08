@@ -1,16 +1,14 @@
 // Timer class models a countdown timer with methods to start, pause, reset, and get the remaining time in hours, minutes, and seconds.
-export class Timer {
-  constructor(durationSeconds = 7200) {
+export default class Timer {
+  constructor(durationSeconds = 7200, startTime = null, isRunning = false) {
     this.duration = durationSeconds;
     this.remaining = durationSeconds;
+    this.startTime = startTime; // string (ISO) or null
     this.interval = null;
-    this.isRunning = false;
+    this.isRunning = isRunning;
   }
 
   start(callback) {
-    if (this.isRunning) return;
-    this.isRunning = true;
-
     this.interval = setInterval(() => {
       if (this.remaining > 0) {
         this.remaining--;
@@ -42,4 +40,10 @@ export class Timer {
   getIsRunning() {
     return this.isRunning;
   }
+
+  setIsRunning(isRunning){
+    this.isRunning = isRunning;
+  }
+
+
 }
