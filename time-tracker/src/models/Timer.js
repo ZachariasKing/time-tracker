@@ -9,6 +9,7 @@ export default class Timer {
   }
 
   start(callback) {
+    callback(this.remaining)
     this.interval = setInterval(() => {
       if (this.remaining > 0) {
         this.remaining--;

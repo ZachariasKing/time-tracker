@@ -54,6 +54,7 @@ export default class TimerController {
   }
 
   resumeFromSaved() {
+    this.timerView.toggleLoadingSpinner(true);
     const saved = this.repo.load();
     if (saved) {
       // Ensure the saved timer is properly initialized
@@ -67,11 +68,6 @@ export default class TimerController {
       // If there is still remaining time in the saved session then set timer countdown 
       if (remainingTimeSeconds > 0) {
         this.model = saved;
-        // TODO: Remove Log
-        console.log(
-          "Model loaded after resuming from saved: " +
-            JSON.stringify(this.model)
-        );
         this.setRemainingTime(
           remainingTimeSeconds > 0 ? remainingTimeSeconds : 0
         );
@@ -81,7 +77,10 @@ export default class TimerController {
       } else {
         this.repo.clear();
       }
+    } else{
+      this.timerView.setBlankTimer();
     }
+    this.timerView.toggleLoadingSpinner(false);
   }
 
   timerFinished(secondsRemaining) {

@@ -1,6 +1,5 @@
 export default class TimerView {
   //Handles UI Updates for the timer view only
-  // TODO: Update timer display when the timer to appear in title (tab)
   updateTimerDisplay(remainingSeconds) {
     if (remainingSeconds === 0) {
       this.timerFinished();
@@ -40,5 +39,19 @@ export default class TimerView {
     const title = document.getElementsByTagName("title")[0];
     display.textContent = displayText;
     title.textContent = titleText;
+  }
+
+  toggleLoadingSpinner(toggleDisplay) {
+    let spinner = document.getElementById("timer-spinner");
+    if (toggleDisplay) {
+      spinner.classList.remove("d-none");
+    }
+    else{
+      spinner.classList.add("d-none");
+    }
+  }
+
+  setBlankTimer(){
+    this.changeTimerAndTitleText("00:00:00", "Time Tracker");
   }
 }
