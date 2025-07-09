@@ -1,0 +1,7 @@
+/* This stylesheet contains all animation keyframes used for the time tracker project */ 
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}

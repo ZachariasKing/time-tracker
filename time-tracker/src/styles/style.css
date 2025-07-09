@@ -1,0 +1,93 @@
+/*Font import*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*CSS Imports*/
+@import "./animation.css";
+
+/* TODO: Start styling text and background colours using variables*/
+/* Setting CSS Custom Properties to set theme */
+:root {
+  --primary-text-color: #212529;
+  --primary-text-color-rgb: 33, 37, 41;
+  --secondary-text-color: #0D1B2A;
+  --secondary-text-color-rgb: 13, 27, 42;
+  --background-color: #4a6fa5;
+  --background-color-rgb: 0, 131, 183;
+  --card-color: #1e1e1e;
+  --card-color-rgb: 30, 30, 30;
+  --accent-color-1: #78E0C2;
+  --accent-color-1-rgb: 120, 224, 194;
+  --accent-color-2: #f50057;
+  --accent-color-2-rgb: 245, 0, 87;
+  --success-color: #59E567;
+  --success-color-rgb: 89, 230, 103;
+  --error-color: #C74739;
+  --error-color-rgb: 199, 71, 57;
+}
+
+/* General styles */
+*{
+  font-family: "Montserrat", sans-serif;
+  color: var(--primary-text-color);
+}
+body{
+  background: linear-gradient(#4a6fa5, #91c8f1) fixed;
+}
+header{
+  background-color: #eef1da;
+}
+.gap-bottom {
+  margin-bottom: 8rem;
+}
+
+
+/* Navbar styles */
+.navbar-dark{
+  background-color: var(--primary-text-color); /* Dark background color */;
+}
+
+/* Timer styles */
+#timer-circle {
+  width: 70vw;           /* keeps gaps on either side of circle 30vw relative to 70vw viewport width taken up by ciurcle  */
+  aspect-ratio: 1 / 1; /* Ensures it remains a circle */
+  border-radius: 50%;     /* Makes it a circle */
+  max-width: 350px;      /* Optional: limit max size */
+  min-width: 250px;   
+  background: var(--primary-text-color);    /* Dark background, matches Bootstrap bg-dark */
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#timer-p{
+    color: #e6f0fa; /* Light text color for contrast */
+}
+#timer-circle:active {
+box-shadow: 0 0 15px rgba(100, 103, 122,0.6) inset; /*inset shadow to give tactile response to user when circle clicked on*/
+}
+
+/* Timer button styles */
+.quick-timer-button {
+  border: 2px solid #4A6FA5;
+  background-color: RGBA(0, 0, 0, 0.0); /* transparent background */
+}
+#start-timer-button{
+  background-image: linear-gradient(to right, #73ff75, #009f7b); /* Gradient background */
+  background-size: 200% auto !important; /* Ensures the gradient covers the button */
+  border: 0px; /* Removes border */
+}
+#start-timer-button:hover{
+  background-position: right center; /* Moves the gradient on hover */
+  color: #fff; /* Ensures text is white on hover */
+}
+#start-timer-button:active{
+  background-position: left center; /* Moves the gradient back on click */
+  box-shadow: inset 0 0 5px rgba(100, 103, 122,0.6); /*inset shadow to give tactile response to user when button clicked on*/;
+}
+#clear-timer-button{
+  border: 1px solid #e6f0fa;
+  color: #e6f0fa;
+}
+.btn svg{
+  fill: #e6f0fa; /* Ensures SVGs inherit the text color */
+}

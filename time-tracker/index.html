@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Tracker</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./src/styles/style.css" />
+  </head>
+  <body>
+    <!--------------------- Navbar -------------------------->
+    <nav class="navbar navbar-expand-md navbar-dark" aria-label="navbar dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-alarm-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M6 .5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H9v1.07a7.001 7.001 0 0 1 3.274 12.474l.601.602a.5.5 0 0 1-.707.708l-.746-.746A6.97 6.97 0 0 1 8 16a6.97 6.97 0 0 1-3.422-.892l-.746.746a.5.5 0 0 1-.707-.708l.602-.602A7.001 7.001 0 0 1 7 2.07V1h-.5A.5.5 0 0 1 6 .5m2.5 5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9zM.86 5.387A2.5 2.5 0 1 1 4.387 1.86 8.04 8.04 0 0 0 .86 5.387M11.613 1.86a2.5 2.5 0 1 1 3.527 3.527 8.04 8.04 0 0 0-3.527-3.527"
+            />
+          </svg>
+          Time Tracker</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarsExample04"
+          aria-controls="navbarsExample04"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExample04">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Dropdown</a
+              >
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form role="search">
+            <input
+              class="form-control"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!--------------------- Main Content -------------------------->
+
+    <div class="container mt-5">
+      <div class="row mb-5">
+        <div class="col-12">
+          <div id="timer-circle" class="mx-auto">
+            <div id="timer-spinner" class="d-none position-absolute spinner-border text-light" role="status">
+              <span class="visually-hidden text-dark">Loading...</span>
+            </div>
+            <p id="timer-p" class="display-5"></p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center mb-5">
+        <div class="col-12 col-md-8">
+          <label class="mb-1 d-block" for="quick-timer-button"
+            >Set time using quick time buttons below:</label
+          >
+          <div class="row g-3">
+            <div class="col-4">
+              <button
+                class="quick-timer-button btn btn-primary w-100"
+                data-duration="5"
+              >
+                25min
+              </button>
+            </div>
+            <div class="col-4">
+              <button
+                class="quick-timer-button btn btn-primary w-100"
+                data-duration="3600"
+              >
+                1hr
+              </button>
+            </div>
+            <div class="col-4">
+              <button
+                class="quick-timer-button btn btn-primary w-100"
+                data-duration="5400"
+              >
+                90min
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 form-group text-start mb-5">
+          <label class="mb-1 d-block" for="time_input"
+            >or enter a specific countdown below:</label
+          >
+          <input
+            class="fs-4 form-control p-3 text-center"
+            type="input"
+            name="time-input"
+            id="time-input"
+            placeholder="e.g. HH:mm:ss"
+          />
+        </div>
+      </div>
+
+      <div class="row justify-content-center mb-5">
+        <div class="col-12 col-md-8">
+          <div class="row g-5">
+            <div class="col-6">
+              <button id="start-timer-button" class="btn btn-primary p-3 w-100">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-play-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"
+                  />
+                </svg>
+                Start
+              </button>
+            </div>
+            <div class="col-6">
+              <button
+                id="clear-timer-button"
+                class="btn btn-outline-secondary p-3 w-100"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-eraser-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828zm.66 11.34L3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293z"
+                  />
+                </svg>
+                Clear
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <audio
+      id="timer-finished-sound"
+      src="./src/assets/audio/mlaudio__success_bell.wav"
+      preload="auto"
+    ></audio>
+    <audio
+      id="timer-cleared-sound"
+      src="./src/assets/audio/yap_audio_production__weaponswipe03.mp3"
+      preload="auto"
+    ></audio>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
