@@ -4,7 +4,7 @@
 
 ## Features
 
-- **User Accounts & Authentication**: Users can sign up and log in to keep track of their activities.
+- **(in-progress) User Accounts & Authentication**: Users can sign up and log in to keep track of their activities.
 - **Real-time Activity Feed**: View what activities your friends are working on (e.g., studying, working).
 - **Activity Tracking**: Keep a record of the time spent on activities each week to monitor progress and ensure balance.
 - **Timer**: Set and control a timer for any activity with a start/pause/clear button.
